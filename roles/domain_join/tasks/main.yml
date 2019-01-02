@@ -23,6 +23,7 @@
     name: "{{ item }}"
     state: present 
     update_cache: yes
+    ignore_errors: yes
   with_items:
     - realmd
     - sssd
