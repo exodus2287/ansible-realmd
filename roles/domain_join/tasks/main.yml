@@ -12,11 +12,13 @@
     name: python-pip
     state: present
     update_cache: yes
+    ignore_errors: yes
 
 - name: Install pexpect
   pip: 
     name: pexpect
-    state: present  
+    state: present
+    ignore_errors: yes
 
 - name: Install AD Domain packages
   apt: 
