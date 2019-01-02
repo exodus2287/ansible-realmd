@@ -11,22 +11,21 @@
   apt: 
     name: python-pip
     state: present
-    update_cache: yes
-    ignore_errors: yes
+    update_cache: no
+ 
 
 - name: Install pexpect
   pip: 
     name: pexpect
     state: present
-    ignore_errors: yes
+ 
 
 - name: Install AD Domain packages
   apt: 
     name: "{{ item }}"
     state: present 
-    update_cache: yes
-    ignore_errors: yes
-  with_items:
+    update_cache: no
+   with_items:
     - realmd
     - sssd
     - adcli
