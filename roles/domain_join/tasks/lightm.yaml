@@ -1,8 +1,0 @@
-- name: Copy lightdm.conf
-  template: 
-    src: lightdm.conf.j2
-    dest: /etc/lightdm/lightdm.conf
-    owner: root
-    group: root
-    mode: 0644
-  tags: ad
