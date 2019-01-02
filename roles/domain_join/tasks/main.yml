@@ -7,11 +7,11 @@
 - name: Load Variables
   include_vars: "vars.yml"
 
-- name: Install pip
-  apt: 
-    name: python-pip
-    state: present
-    update_cache: no
+#- name: Install pip
+#  apt: 
+#    name: python-pip
+#    state: present
+#    update_cache: no
  
 
 - name: Install pexpect
