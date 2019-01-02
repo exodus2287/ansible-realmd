@@ -1,0 +1,8 @@
+---
+
+- name: Create lightdm.conf for desktop clients
+  hosts: all
+  become: true
+
+  roles:
+   - domain_joinjoin
