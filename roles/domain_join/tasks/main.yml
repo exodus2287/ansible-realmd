@@ -55,7 +55,7 @@
   tags: ad
 
 - name: Discover realm
-  command: /bin/bash -c "/usr/sbin/realm discover {{ realm_domain }}"
+  command: /bin/bash -c "/usr/sbin/realm discover "{{ realm_domain }}""
   register: realm_discover_results
   tags: ad
 
@@ -65,7 +65,7 @@
 
 - name: Create kerberos ticket
   expect:
-    command: /bin/bash -c "/usr/bin/kinit -V {{ kerberos_user }}"
+    command: /bin/bash -c "/usr/bin/kinit -V "{{ kerberos_user }}""
     responses:
       (?i)Password: "{{ kerberos_user_password }}"
   tags: ad
@@ -78,11 +78,29 @@
 
 - name: Debug realm_list_results
   debug:
-    msg: {{ realm_list_results.stdout }}
+    msg: "{{ realm_list_results.stdout }}"
 
 - name: Join system to AD
   expect:
-    command: /bin/bash -c "/usr/sbin/realm join {{ realm_domain }} --computer-ou='{{ realm_ad_ou }}' --user={{ kerberos_user }}"
+22
+          ^ here
+23
+We could be wrong, but this one looks like it might be an issue with
+24
+missing quotes.  Always quote template expression brackets when they
+25
+start a value. For instance:
+26
+27
+    with_items:
+28
+      - {{ foo }}
+29
+30
+Should be written as:
+31
+
+    command: /bin/bash -c "/usr/sbin/realm join "{{ realm_domain }}" --computer-ou='"{{ realm_ad_ou }}"' --user="{{ kerberos_user }}""
     responses:
       (?i)Password: "{{ kerberos_user_password }}"  
   ignore_errors: yes
