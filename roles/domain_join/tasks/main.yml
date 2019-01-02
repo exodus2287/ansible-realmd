@@ -96,8 +96,11 @@
 - name: Create sudoers file backup
   command: cp -f /etc/sudoers /etc/sudoers.bak
 
+#- name: Add domain admins group to sudoers
+#  lineinfile: dest=/etc/sudoers.tmp state=present line='%domain\ admins ALL=(ALL:ALL) ALL' regexp='^%domain'
+  
 - name: Add domain admins group to sudoers
-  lineinfile: dest=/etc/sudoers.tmp state=present line='%domain\ admins ALL=(ALL:ALL) ALL' regexp='^%domain'
+  lineinfile: dest=/etc/sudoers.tmp state=present line='%linux\ users@"{{ realm_domain }} ALL=(ALL:ALL) ALL' regexp='^%domain'
 
 - name: Final sudoers file check
   shell: visudo -q -c -f /etc/sudoers.tmp && cp -f /etc/sudoers.tmp /etc/sudoers
