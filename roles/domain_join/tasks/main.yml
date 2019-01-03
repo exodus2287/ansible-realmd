@@ -25,7 +25,7 @@
     name: "{{ item }}"
     state: present 
     update_cache: no
-    with_items:
+  with_items:
     - realmd
     - sssd
     - adcli
