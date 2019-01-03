@@ -107,14 +107,14 @@
 - name: Final sudoers file check
   shell: visudo -q -c -f /etc/sudoers.tmp && cp -f /etc/sudoers.tmp /etc/sudoers
 
-- name: Copy sssd.conf
-  template:
-    src: sssd.conf.j2
-    dest: /etc/sssd/sssd.conf
-    owner: root
-    group: root
-    mode: 0644
-  tags: ad
+#- name: Copy sssd.conf
+#  template:
+#    src: sssd.conf.j2
+#    dest: /etc/sssd/sssd.conf
+#    owner: root
+#    group: root
+#    mode: 0644
+#  tags: ad
 
 - name: Copy pam common-session
   template: 
