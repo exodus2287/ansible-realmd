@@ -5,7 +5,8 @@
   include_vars: "secrets.yml"
 
 - name: Load Variables
-  include_vars: "vars.yml"
+  include_vars: "vars.yml"[domain/in.chisel.ai]
+
 
 - name: Install pip
   apt: 
@@ -118,7 +119,6 @@
 
 - lineinfile:
     path: /etc/sssd/sssd.conf
-    regexp: '^services = nss, pam'
     insertafter: '^services = nss, pam'
     line: 'default_domain = {{ realm_domain }}'
 
