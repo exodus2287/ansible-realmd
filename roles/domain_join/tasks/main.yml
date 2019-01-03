@@ -5,7 +5,7 @@
   include_vars: "secrets.yml"
 
 - name: Load Variables
-  include_vars: "vars.yml"[domain/in.chisel.ai]
+  include_vars: "vars.yml"
 
 
 - name: Install pip
