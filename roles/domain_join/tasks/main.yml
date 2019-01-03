@@ -118,9 +118,9 @@
 
 - lineinfile:
     path: /etc/sssd/sssd.conf
-    regexp: '^services  '
-    insertafter: '^#services  '
-    line: 'default_domain = "{{ realm_domain }}"'
+    regexp: '^services'
+    insertafter: '^services'
+    line: 'default_domain = {{ realm_domain }}'
 
 - name: Copy pam common-session
   template: 
