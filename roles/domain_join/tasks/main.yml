@@ -7,11 +7,11 @@
 - name: Load Variables
   include_vars: "vars.yml"
 
-#- name: Install pip
-#  apt: 
-#    name: python-pip
-#    state: present
-#    update_cache: no
+- name: Install pip
+  apt: 
+    name: python-pip
+    state: present
+    update_cache: yes
  
 
 - name: Install pexpect
@@ -24,7 +24,7 @@
   apt: 
     name: "{{ item }}"
     state: present 
-    update_cache: no
+    update_cache: yes
   with_items:
     - realmd
     - sssd
