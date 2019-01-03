@@ -1,0 +1,8 @@
+---
+
+- name: Replace sources.list with clean[er] version
+  hosts: all
+  become: true
+
+  roles:
+   - sources
