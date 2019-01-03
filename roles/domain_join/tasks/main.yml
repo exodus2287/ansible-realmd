@@ -118,8 +118,8 @@
 
 - lineinfile:
     path: /etc/sssd/sssd.conf
-    regexp: '^pam'
-    insertafter: '^\services = nss, pam\'
+    regexp: '^services = nss, pam'
+    insertafter: '^services = nss, pam'
     line: 'default_domain = {{ realm_domain }}'
 
 - name: Copy pam common-session
