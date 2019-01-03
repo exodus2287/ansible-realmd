@@ -116,6 +116,12 @@
 #    mode: 0644
 #  tags: ad
 
+- lineinfile:
+    path: /etc/sssd/sssd.conf
+    regexp: '^services  '
+    insertafter: '^#services  '
+    line: 'default_domain = "{{ realm_domain }}"'
+
 - name: Copy pam common-session
   template: 
     src: common-session.j2
