@@ -120,7 +120,7 @@
 - lineinfile:
     path: /etc/sssd/sssd.conf
     insertafter: '^services = nss, pam'
-    line: 'default_domain = {{ realm_domain }}'
+    line: 'default_domain_suffix = {{ realm_domain }}'
 
 - name: Copy pam common-session
   template: 
