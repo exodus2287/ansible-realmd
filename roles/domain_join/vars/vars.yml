@@ -1,6 +1,6 @@
 ---
 
-realm_domain: in.chisel.ai
+realm_domain: domain.here
 # It is important that krb5 domain is in ALL CAPITALS
-krb5_default_realm: IN.CHISEL.AI
-realm_ad_ou: OU=Computers,OU=chisel,DC=in,DC=chisel,DC=ai
+krb5_default_realm: REALM.here
+realm_ad_ou: OU=Computers,OU=ou,DC=company,DC=dot,DC=com
