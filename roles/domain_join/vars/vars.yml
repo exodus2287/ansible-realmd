@@ -2,5 +2,5 @@
 
 realm_domain: domain.here
 # It is important that krb5 domain is in ALL CAPITALS
-krb5_default_realm: REALM.here
+krb5_default_realm: REALM.HERE
 realm_ad_ou: OU=Computers,OU=ou,DC=company,DC=dot,DC=com
