@@ -133,7 +133,7 @@
     path: /etc/polkit-1/localauthority.conf.d/51-ubuntu-admin.conf
 # Add Primary Group of User [usually Domain Users]    
     regexp: '^AdminIdentities=unix-group:sudo;unix-group:admin'
-    line: 'AdminIdentities=unix-group:sudo;unix-group:admin;unix-group:1860001131'
+    replace: 'AdminIdentities=unix-group:sudo;unix-group:admin;unix-group:1860001131'
 
 - name: Copy pam common-session
   template: 
