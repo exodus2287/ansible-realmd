@@ -121,6 +121,12 @@
     path: /etc/sssd/sssd.conf
     insertafter: '^services = nss, pam'
     line: 'default_domain_suffix = {{ realm_domain }}'
+    
+# Support for GUI via Polkit    
+- lineinfile:
+    path: /etc/sssd/sssd.conf
+    insertafter: '^access_provider = ad'
+    line: 'ad_gpo_map_interactive = +polkit-1'
 
 - name: Copy pam common-session
   template: 
