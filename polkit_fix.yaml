@@ -1,0 +1,7 @@
+- name: Apply configuration to newly deployed machines
+  hosts: all
+  become: true
+  #ignore_errors: yes
+
+  roles:
+   - polkit_fix
