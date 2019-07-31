@@ -126,7 +126,7 @@
 - lineinfile:
     path: /etc/sssd/sssd.conf
     insertafter: '^access_provider = ad'
-    line: 'ad_gpo_map_interactive = +polkit-1 +cups'
+    line: 'ad_gpo_map_interactive = +polkit-1, +cups'
     
 # Support for GUI via Polkit
 - replace:
